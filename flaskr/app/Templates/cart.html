@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<table class="table">
+  <tbody>
+  {% if cart %}
+      {% for book in cart %}
+      <tr class="_cart">
+        <td>{{book['title']}}</td>
+        <td>{{book['author']}}</td>
+        <td>{{book['genre']}}</td>
+        <td>{{book['cost']}}</td>
+        <td>
+
+          <form class="_count_in_card" id="{{book['id']}}">
+            <input type="number" name="count" value="{{book['count']}}">
+            <a href="">Удалить товар</a>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+  {% endif%}
+  </tbody>
+</table>
+<div class="text-center">
+  <button class="_order btn btn-primary">Заказать</button>
+</div>
+{% endblock %}

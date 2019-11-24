@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="list-group">
+  <a href="/requests/one/" class="list-group-item list-group-item-action">
+    1) Узнать все сведения об издательстве, у которого были заказаны самые дорогие экземпляры указанной книги на указанную дату.
+  </a>
+  <a href="/requests/two" class="list-group-item list-group-item-action">
+    2) Узнать все сведения об издательстве, в котором был размещен самый дорогой заказ в указанном полугодии.
+  </a>
+  <a href="/requests/three" class="list-group-item list-group-item-action">
+    3) Узнать все сведения об издательстве, не сделавшего еще ни одной поставки.
+  </a>
+  <a href="/requests/four" class="list-group-item list-group-item-action">
+    4) Узнать все сведения об издательстве, не сделавшего еще ни одной поставки в указанный месяц и год.
+  </a>
+</div>
+{% endblock %}

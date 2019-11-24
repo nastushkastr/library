@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="text-center pt-5">
+    <h5>{{label}}</h5>
+    <form class="form-group" action="{{url}}" method="{{method}}" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            <p class="mb-0 mt-5">{{ form.title.label }}</p>
+            {{ form.title(size=32) }}
+            {% for error in form.title.errors %}
+            <p class="mb-4 error">{{ error }}</p>
+            {% endfor %}
+        </p>
+        <p>
+            <p class="mb-0 mt-5">{{ form.genre.label }}</p>
+            {{ form.genre(size=32) }}
+            {% for error in form.genre.errors %}
+            <p class="mb-4 error">{{ error }}</p>
+            {% endfor %}
+        </p>
+        <p>
+            <p class="mb-0 mt-5">{{ form.author.label }}</p>
+            {{ form.author(size=32) }}
+            {% for error in form.author.errors %}
+            <p class="mb-4 error">{{ error }}</p>
+            {% endfor %}
+        </p>
+        <p>
+            <p class="mb-0 mt-5">{{ form.count_copies.label }}</p>
+            {{ form.count_copies(size=32) }}
+            {% for error in form.count_copies.errors %}
+            <p class="mb-4 error">{{ error }}</p>
+            {% endfor %}
+        </p>
+        <p>
+            <p class="mb-0 mt-5">{{ form.price.label }}</p>
+            {{ form.price(size=32) }}
+            {% for error in form.price.errors %}
+            <p class="mb-4 error">{{ error }}</p>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    <a href="/books">
+        Назад
+    </a>
+</div>
+{% endblock %}

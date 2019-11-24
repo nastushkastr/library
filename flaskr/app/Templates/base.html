@@ -1,0 +1,65 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="/static/css/bootstrap-material-design.min.css" crossorigin="anonymous">
+    <title>Carousel Template for Bootstrap</title>
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/carousel.css" rel="stylesheet">
+    <script src="/static/js/fontawesome.js" crossorigin="anonymous" async></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-custom navbar-dark">
+      <a class="navbar-brand" href="/">Библиотека</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+        {% if auth %}
+          {% if group == "watcher" %}
+          <li class="nav-item active mr-4">
+            <a class="nav-link" href="/cart">
+              <i class="fas fa-shopping-cart fa-2x"></i>
+            </a>
+          </li>
+          {% endif %}
+          <li class="nav-item mr-4">
+            <span class="navbar-text text-white">{{login}}</span>
+          </li>
+          <li class="nav-item mr-4">
+            <img class="">
+          </li>
+          <li class="nav-item active" >
+            <a class="nav-link" href="/logout">Выйти</a>
+          </li>
+        {% else %}
+          <li class="nav-item active">
+            <a class="nav-link" href="/login">Войти</a>
+          </li>
+        {% endif %}
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main">
+      {% block content %}{% endblock %}
+      <!-- FOOTER -->
+      <footer class="footer-copyright text-center py-3">
+        <p>© Anastasia Strakhova</p>
+      </footer>
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/fast-average-color/dist/index.js"></script>
+    <script src="/static/js/script.js"></script>
+    <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="list-group">
+  {% if publishers %}
+    {% for publ in publishers %}
+      <a href="/publishers/{{publ}}" class="list-group-item list-group-item-action">
+        {{publ}}
+      </a>
+    {% endfor %}
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Название издательства</th>
+      <th scope="col">Адрес</th>
+      <th scope="col">Контактное имя</th>
+      <th scope="col">Телефон</th>
+      <th scope="col">Год основания</th>
+      <th scope="col">Год заключения контракта с библиотекой</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% if report %}
+    {% for book in report %}
+    <tr>
+      <td scope="row">{{book[0]}}</td>
+      <td>{{book[1]}}</td>
+      <td>{{book[2]}}</td>
+      <td>{{book[3]}}</td>
+      <td>{{book[4]}}</td>
+      <td>{{book[5]}}</td>
+    </tr>
+    {% endfor%}
+  {% endif%}
+  </tbody>
+</table>
+<button class="btn btn-primary text-center"><a href=".">
+        Назад
+      </a></button>
+{% endblock %}
